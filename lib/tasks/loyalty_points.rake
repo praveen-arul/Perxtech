@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :loyalty_points do
   desc "providing bonus points and expiring loyalty points for the users"
 

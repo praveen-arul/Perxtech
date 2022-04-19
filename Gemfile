@@ -27,13 +27,13 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
+# Used for authorization
 gem 'devise'
-
+# Used for scheduling background jobs
 gem 'sidekiq'
-
+# Used to fetch the countries
 gem 'city-state'
-
+# Used to bulk import the records
 gem 'activerecord-import'
 
 group :development, :test do
@@ -43,6 +43,7 @@ group :development, :test do
   # Used for running the test scripts
   gem 'rspec-rails', '~> 5.0.0'
   gem 'factory_bot_rails'
+  # Used to create dynamic values for testing
   gem 'faker'
 end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :rewards do
   desc "providing rewards for the users based on rule sets"
 

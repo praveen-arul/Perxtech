@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :transaction do
     amount { Faker::Number.number(digits: 3) }
-    payment_mode { 'cash' }
+    payment_mode { 'Cash' }
     user
   end
 end

@@ -3,6 +3,6 @@
 class UsersRewardsController < ApplicationController
   # GET /rewards
   def index
-    @rewards = current_user.rewards
+    @user_rewards = current_user.user_rewards
   end
 end

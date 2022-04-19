@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateLoyaltyPointsJob < ApplicationJob
   queue_as :default
 
