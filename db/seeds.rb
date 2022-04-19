@@ -8,7 +8,8 @@ user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.la
                    date_of_birth: Faker::Date.in_date_period, country: User::DEFAULT_COUNTRY)
 
 # Creating basic Rewards
-rewards = [{ name: 'Free Coffee_Reward' }, { name: 'Free Movie Ticket' }, { name: 'Airport Lounge Access Reward' }, { name: '5% Cash Rebate' }]
+rewards = [{ name: 'Free Coffee_Reward' }, { name: 'Free Movie Ticket' }, { name: 'Airport Lounge Access Reward' },
+           { name: '5% Cash Rebate' }]
 
 Reward.create(rewards)
 

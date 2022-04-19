@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 every :day, at: '12:00 pm' do
   rake 'rewards:providing_movie_rewards', output: 'log/rake_status.log'
   rake 'rewards:providing_5percent_cash_rewards', output: 'log/rake_status.log'

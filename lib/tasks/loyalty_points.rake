@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 namespace :loyalty_points do
-  desc "providing bonus points and expiring loyalty points for the users"
+  desc 'providing bonus points and expiring loyalty points for the users'
 
   # Task to provide Bonus points for the customer
   task providing_bonus: :environment do
     User.joins(:transactions).where('transactions.created_at BETWEEN ? AND ? and transactions.amount >= ?',
-      Date.today.beginning_of_quarter, Date.today.end_of_quarter, 2000).update_all('total_loyalty_points = (total_loyalty_points + 100)')
+                                    Date.today.beginning_of_quarter, Date.today.end_of_quarter, 2000).update_all('total_loyalty_points = (total_loyalty_points + 100)')
   end
 
   # Task to expire loyalty points for the user
