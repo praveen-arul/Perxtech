@@ -1,37 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Total loyalty points</th>
-      <th>Date of birth</th>
-      <th>Tier</th>
-      <th>Country</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.total_loyalty_points %></td>
-        <td><%= user.date_of_birth %></td>
-        <td><%= user.tier %></td>
-        <td><%= user.country %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<h1 class="head-title">Profile</h1>
+<div class="new_button">
+  <%= button_to edit_user_path(@user), :method => "get", :class => "add_button" do %><span>Edit User</span><% end %>
+</div>
+<table class="styled-table">
+  <tr><th>First Name <td><%= @user.first_name %></td> </th>
+  </tr>
+  <tr>
+    <th>Last Name<td><%= @user.last_name %></td></th>
+  </tr>
+  <tr>
+    <th>Email <td><%= @user.email %></td></th>
+  </tr>
+  <tr>
+    <th>Total Loyalty Points <td><%= @user.total_loyalty_points %></td></th>
+  </tr>
+  <tr>
+    <th>Loyalty Tier <td><%= @user.tier.titleize %></td></th>
+  </tr>
+  <tr>
+    <th>Date Of Birth <td><%= @user.date_of_birth.strftime('%F') %></td></th>
+  </tr>
+  <tr>
+    <th>Country <td><%= @user.country %></td></th>
+  </tr>
 </table>
 
 <br>
-
-<%= link_to 'New User', new_user_path %>

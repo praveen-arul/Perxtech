@@ -1,31 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Transactions</h1>
-
-<table>
+<h1 class="head-title">Transactions</h1>
+<div class="new_button">
+  <%= button_to new_transaction_path, :method => "get", :class => "add_button" do %><span>New Transaction</span><% end %>
+</div>
+<table class="styled-table table-content-center">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Amount</th>
       <th>Points generated</th>
       <th>Payment mode</th>
-      <th colspan="3"></th>
+      <th>Created At</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @transactions.each do |transaction| %>
+    <% if @transactions.present? %>
+      <% @transactions.each do |transaction| %>
+        <tr>
+          <td><%= transaction.id %></td>
+          <td><%= transaction.amount %></td>
+          <td><%= transaction.points_generated %></td>
+          <td><%= transaction.payment_mode %></td>
+          <td><%= transaction.created_at.strftime('%F') %></td>
+        </tr>
+      <% end %>
+    <% else %>
       <tr>
-        <td><%= transaction.amount %></td>
-        <td><%= transaction.points_generated %></td>
-        <td><%= transaction.payment_mode %></td>
-        <td><%= link_to 'Show', transaction %></td>
-        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td colspan='5' class="test-position"> No Records Found</td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Transaction', new_transaction_path %>

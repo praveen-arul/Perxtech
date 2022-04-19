@@ -1,32 +1,30 @@
-<%= form_with(model: transaction) do |form| %>
-  <% if transaction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+<div class="login-block">
+  <h1>New Transaction</h1>
+  <%= form_with(model: transaction) do |form| %>
+    <% if transaction.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
 
-      <ul>
-        <% transaction.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% transaction.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :amount %>
+      <%= form.number_field :amount %>
+    </div>
+
+    <div class="field">
+      <%= form.label :payment_mode %>
+      <%= form.select :payment_mode, Transaction::DEFAULT_PAYMENTS %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: 'submit'%>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :points_generated %>
-    <%= form.number_field :points_generated %>
-  </div>
-
-  <div class="field">
-    <%= form.label :payment_mode %>
-    <%= form.text_field :payment_mode %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,0 +1,208 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+	background-size: cover;
+	font-family: Montserrat;
+}
+.navbar-bg-green {
+	background-color: #009879;
+}
+
+.logo {
+	width: 213px;
+	height: 36px;
+	margin: 30px auto;
+}
+
+.login-block {
+	margin-top: 2% !important;
+	width: 25%;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	border: 2px solid #009879;
+	margin: 0 auto;
+}
+
+.login-block h1 {
+	text-align: center;
+	color: #000;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.head-title {
+	text-align: center;
+	color: #000;
+	font-size: 30px;
+	text-transform: uppercase;
+	color: #009879;
+}
+
+.login-block input:not(#user_remember_me) {
+	width: 100%;
+	height: 42px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	font-size: 14px;
+	font-family: Montserrat;
+	padding: 0 20px 0 20px;
+	outline: none;
+}
+
+.login-block input:active, .login-block input:focus {
+	border: 1px solid #ff656c;
+}
+
+.login-block select {
+	width: 100%;
+	height: 42px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	font-size: 14px;
+	font-family: Montserrat;
+	padding: 0 20px 0 20px;
+	outline: none;
+}
+
+.login-block select:active, .login-block input:focus {
+	border: 1px solid #ff656c;
+}
+
+.login-block button {
+	width: 100%;
+	height: 40px;
+	background: #ff656c;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #e15960;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-family: Montserrat;
+	outline: none;
+	cursor: pointer;
+}
+
+.login-block .submit {
+	cursor: pointer;
+}
+
+.login-block button:hover {
+	background: #ff7b81;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.card:hover {
+	box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+.card-padding {
+	padding: 2px 16px;
+}
+
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+	border: 0;
+	color: white;
+	font-weight: bold;
+}
+
+.navbar-brand {
+	padding: 0;
+}
+
+.navbar-brand > img {
+	width: 150px;
+}
+
+ul.nav a:hover { 
+	color: #fff !important; 
+}
+
+.top-wrap {
+	background: #477998;
+	padding-top: 50px;
+}
+
+.new_button {
+	margin-right: 25%;
+	padding-bottom: 20px;
+}
+
+.add_button {
+	border-radius: 4px;
+	background-color: #009879;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 15px;
+	padding: 5px;
+	width: 150px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 0 0 15px;
+	float: right;
+}
+
+.add_button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.add_button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.add_button:hover span {
+	padding-right: 25px;
+}
+
+.add_button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+table {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.setting-icon {
+	font-size: x-large !important;
+	color: #ffffff;
+}

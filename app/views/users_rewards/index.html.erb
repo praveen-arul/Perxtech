@@ -1,0 +1,33 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1 class="head-title">Rewards</h1>
+<table class="styled-table table-content-center">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Rewards</th>
+      <th>Rewards Created</th>
+      <th>Rewards Expiration</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @rewards.present? %>
+      <% @rewards.each do |reward| %>
+        <tr>
+          <td><%= reward.id %></td>
+          <td><%= reward.name %></td>
+          <td><%= reward.created_at.strftime('%F') %></td>
+          <td><%= (reward.created_at + 1.year).strftime('%F') %></td>
+        </tr>
+      <% end %>
+    <% else %>
+    <tr>
+      <td colspan='5' class="test-position"> No Records Found</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
